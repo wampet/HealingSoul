@@ -6,7 +6,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../components/form";
+} from "../components/Form";
 import { ArrowBigDown, ArrowRightIcon, Mail, PhoneIcon } from "lucide-react";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
