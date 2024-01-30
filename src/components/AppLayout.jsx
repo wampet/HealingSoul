@@ -1,12 +1,13 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
+
 import Footer from "./Footer";
+import NavBar from "./navbar/NavBar";
 
 function AppLayout() {
   return (
     <div>
-      <header>
-        <Header />
+      <header className="sticky top-0  z-30 bg-white ">
+        <NavBar />
       </header>
 
       <main>

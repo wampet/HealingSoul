@@ -1,84 +1,71 @@
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+
 import PropTypes from "prop-types";
 
+const responsive = {
+  0: { items: 1 },
+  568: { items: 1 },
+  700: { items: 2 },
+  1024: { items: 3 },
+};
 const blogs = [
-  [
-    {
-      img: "https://cdn.easyfrontend.com/pictures/courses/courses_1_1.png",
-      category: "Marketing",
-      title: "The Complete Digital Marketing Guide Course",
-      text: "Some quick example text to build on the card the bulk content...",
-      authorImg: "https://cdn.easyfrontend.com/pictures/users/user5.jpg",
-      author: "John Smith",
-    },
-    {
-      img: "https://cdn.easyfrontend.com/pictures/courses/courses_1_2.png",
-      category: "SEO",
-      title: "How I’m Styling Everyday Black Outfits with leather jeans",
-      text: "Viverra tellus in hac habitasse platea dictumst. Sollicitudin tempor id eu nisl.",
-      authorImg: "https://cdn.easyfrontend.com/pictures/users/user28.jpg",
-      author: "Jos Smith",
-    },
-    {
-      img: "https://cdn.easyfrontend.com/pictures/courses/courses_1_3.png",
-      category: "Agency",
-      title: "Long lasting fall scent for women sale offer only in this week!",
-      text: "More off this less hello salamander lied porpoise much over tightly circa horse taped.",
-      authorImg: "https://cdn.easyfrontend.com/pictures/users/user2.jpg",
-      author: "Alex Hales",
-    },
-  ],
-  [
-    {
-      img: "https://cdn.easyfrontend.com/pictures/courses/courses_1_3.png",
-      category: "Marketing",
-      title: "The Complete Digital Marketing Guide Course",
-      text: "Some quick example text to build on the card the bulk content...",
-      authorImg:
-        "https://cdn.easyfrontend.com/pictures/testimonial/testimonial_square_1.jpeg",
-      author: "John Smith",
-    },
-    {
-      img: "https://cdn.easyfrontend.com/pictures/courses/courses_1_2.png",
-      category: "Marketing",
-      title: "The Complete Digital Marketing Guide Course",
-      text: "Some quick example text to build on the card the bulk content...",
-      authorImg:
-        "https://cdn.easyfrontend.com/pictures/testimonial/testimonial_square_2.jpeg",
-      author: "John Smith",
-    },
-    {
-      img: "https://cdn.easyfrontend.com/pictures/courses/courses_1_1.png",
-      category: "Marketing",
-      title: "The Complete Digital Marketing Guide Course",
-      text: "Some quick example text to build on the card the bulk content...",
-      authorImg:
-        "https://cdn.easyfrontend.com/pictures/testimonial/testimonial_square_3.jpeg",
-      author: "John Smith",
-    },
-  ],
+  {
+    img: "https://plus.unsplash.com/premium_photo-1661422278122-f75d0c7b655b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NXw3X0NTTlhFWjAtb3x8ZW58MHx8fHx8",
+    title: "Skilled Nursing",
+    text: "We provide top-tier nursing care, tailored to each resident's needs. Explore our commitment to health and comfort.",
+  },
+  {
+    img: "https://plus.unsplash.com/premium_photo-1664476958156-367e84136f26?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8OXw3X0NTTlhFWjAtb3x8ZW58MHx8fHx8",
+    title: "Social Services",
+    text: "We connect residents with vital social services, fostering a supportive and vibrant community. Learn more about our offerings.",
+  },
+
+  {
+    img: "https://plus.unsplash.com/premium_photo-1661292052654-32d8875632c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTJ8N19DU05YRVowLW98fGVufDB8fHx8fA%3D%3D",
+    title: "Rehabilitation",
+    text: "Our customized rehab programs focus on enhancing independence. Discover our approach to physical and occupational therapy.",
+  },
+
+  {
+    img: "https://plus.unsplash.com/premium_photo-1663134311269-f396920c5082?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTl8N19DU05YRVowLW98fGVufDB8fHx8fA%3D%3D",
+    title: "Companion Care",
+    text: "Experience our compassionate companion care, enriching daily life with warmth and understanding for each resident.",
+  },
+  {
+    img: "https://plus.unsplash.com/premium_photo-1664476958156-367e84136f26?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8OXw3X0NTTlhFWjAtb3x8ZW58MHx8fHx8",
+    title: "Social Services",
+    text: "We connect residents with vital social services, fostering a supportive and vibrant community. Learn more about our offerings.",
+  },
+  {
+    img: "https://plus.unsplash.com/premium_photo-1663089104521-fdc5ab858c41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTN8N19DU05YRVowLW98fGVufDB8fHx8fA%3D%3D",
+    title: "Specialized Care",
+    text: "We provide more than just care – it's personalized, specialized attention, ensuring each resident's unique needs are met. Click to explore how our services go beyond, tailoring care to individual requirements.",
+  },
 ];
 
 const BlogItem = ({ blog }) => {
-  const { title, text,  img } = blog;
+  const { title, text, img } = blog;
   return (
-    <div className="bg-gray-100  rounded-lg overflow-hidden h-full">
-      <div className="relative">
-        <img src={img} className="w-full" alt="..." />
+    <div className=" rounded-lg overflow-hidden h-full bg-white ">
+      <div className="mb-4 overflow-hidden rounded-t-[5px] h-full">
+        <img
+          src={img}
+          className="w-full transition hover:rotate-4 hover:scale-125"
+          alt="..."
+        />
       </div>
-      <div className="p-4 pb-4">
+      <div className="flex flex-col items-center justify-center p-4">
         <a href="#!">
-          <h5 className="text-black text-[19px] font-medium leading-6 hover:text-red-600 mb-2">
+          <h5 className="text-gray-heading center text-xl font-medium leading-6 hover:text-green-600 mb-2">
             {title}
           </h5>
         </a>
-        <p className="opacity-80 mb-2 text-black">{text}</p>
-        <div className="flex flexCenter mb-2">
+        <p className=" mb-4 text-gray-heading text-center">{text}</p>
+        <div className="flex ">
           <a
             href="#!"
-            className="text-red-500 bg-transparent hover:bg-green-600 border border-green-600 hover:text-white py-2 rounded transition ezy__blog15-card-btn flex items-center px-3"
+            className="text-green-500 bg-transparent hover:bg-green-600 border border-green-600 hover:text-white py-2 rounded transition ezy__blog15-card-btn flex items-center px-3"
           >
             Read More
           </a>
@@ -91,52 +78,34 @@ BlogItem.propTypes = {
   blog: PropTypes.object.isRequired,
 };
 
+const Carousel = () => (
+  <AliceCarousel
+    mouseTracking
+    autoPlay="true"
+    autoPlayInterval="800"
+    items={blogs.map((blog, i) => (
+      <div key={i}>
+        <div className="p-2">
+          <BlogItem blog={blog} />
+        </div>
+      </div>
+    ))}
+    responsive={responsive}
+    controlsStrategy="responsive"
+  />
+);
+
 const Services = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const handleControl = (type) => {
-    if (type === "prev") {
-      setActiveIndex(activeIndex <= 0 ? blogs.length - 1 : activeIndex - 1);
-    } else {
-      setActiveIndex(activeIndex >= blogs.length - 1 ? 0 : activeIndex + 1);
-    }
-  };
-
   return (
-    <section className=" py-14 md:py-24 lg:py-0 text-stone-800 bg-white bg-[#F5F5F5] dark:text-white overflow-hidden">
-      <div className="container px-8 md:px-24">
-        <div className="grid grid-cols-1 justify-center text-center">
-          <div className="col-span-1">
-            <h1 className="text-2xl md:text-[45px] leading-none font-bold text-black">
-              Services
-            </h1>
-          </div>
-
-          <div className="relative">
-            <div className="grid grid-cols-6 gap-x-6">
-              {blogs[activeIndex].map((blog, i) => (
-                <div
-                  className="col-span-6 md:col-span-3 lg:col-span-2 mt-6 md:mt-12"
-                  key={i}
-                >
-                  <BlogItem blog={blog} />
-                </div>
-              ))}
-            </div>
-
-            <button
-              className="w-12 h-12 text-[22px] bg-green-600 bg-opacity-70 hover:bg-opacity-100 text-white rounded-full absolute top-2/4 -left-6 -translate-y-1/2 transition"
-              onClick={() => handleControl("prev")}
-            >
-              <FontAwesomeIcon icon={faAngleLeft} />
-            </button>
-            <button
-              className="w-12 h-12 text-[22px] bg-green-600 bg-opacity-70 hover:bg-opacity-100 text-white rounded-full absolute top-2/4 -right-6 -translate-y-1/2 transition"
-              onClick={() => handleControl("next")}
-            >
-              <FontAwesomeIcon icon={faAngleRight} />
-            </button>
-          </div>
+    <section className="bg-[#F5F5F5]  ">
+      <div className="mx-auto max-w-screen-xl ">
+        <div className="flex justify-center  ">
+          <h1 className="text-3xl leading-none font-bold tracking-wider mb-2 text-gray-heading p-8">
+            Services
+          </h1>
+        </div>
+        <div>
+          <Carousel />
         </div>
       </div>
     </section>

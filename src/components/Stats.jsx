@@ -1,37 +1,44 @@
+import { Button } from "./Button";
+
+/* eslint-disable react/no-unescaped-entities */
 function Stats() {
   return (
     <div>
       <section>
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-       
-
-            <div className="lg:py-24">
-              <h2 className="text-3xl font-bold sm:text-4xl">
-                Grow your audience
-              </h2>
-
-              <p className="mt-4 text-gray-600">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
-                qui hic atque tenetur quis eius quos ea neque sunt, accusantium
-                soluta minus veniam tempora deserunt? Molestiae eius quidem quam
-                repellat.
-              </p>
-
-              <a
-                href="#"
-                className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
-              >
-                Get Started Today
-              </a>
+        <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
+            <div className="relative z-10 lg:py-16">
+              <div className="relative h-64 sm:h-80 lg:h-full">
+                <img
+                  alt="House"
+                  src="https://images.pexels.com/photos/7551623/pexels-photo-7551623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
             </div>
 
-            <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
-              <img
-                alt="Party"
-                src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+            <div className="relative flex items-center bg-gray-100">
+              <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span>
+
+              <div className="p-8 sm:p-16 lg:p-24">
+                <h2 className="text-2xl font-bold sm:text-3xl">
+                We are deeply committed to our community, providing unwavering and exceptional care to our clients.
+                </h2>
+
+                <p className="my-4 text-gray-600">
+                  Our primary goal is to assist our residents in regaining their
+                  optimal functional abilities. We offer specialized physical,
+                  occupational, and speech therapy, carefully customized to meet
+                  the individual requirements of each resident. From the very
+                  first day of admission, we initiate a tailored rehabilitation
+                  screening process. Upholding our residents' privacy is of
+                  utmost importance to us. We take pride in being among the
+                  select few facilities that provide exclusively private rooms
+                  for our residents.
+                </p>
+                <Button variant="green" size="xlg" className="mt-5 "> Get in Touch</Button>
+                
+              </div>
             </div>
           </div>
         </div>

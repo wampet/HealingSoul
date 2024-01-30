@@ -1,122 +1,140 @@
-import { useState } from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import PropTypes from "prop-types";
-import { Button } from "../components/Button";
-
-const faqList = [
-  {
-    isActive: true,
-    question: "What is Easy Frontend?",
-    answer:
-      "First and foremost, finding experienced and compassionate caregivers who are the right fit for your family is key to an experience that surpasses expectations. This is not only to meet basic needs, but also to engage in meaningful relationships which are the crux of having a positive impact on your loved one’s life. Whether for just a few hours or for continuous care, we are fully committed to matching your loved one’s needs and preferences with professionals who have the necessary education, experience, personality, and presentation.",
-  },
-  {
-    isActive: false,
-    question: "Who is Easy Frontend for?",
-    answer:
-      "Having a seasoned nurse manager that fully understands your condition ensures that your needs are being met and that all members of your health care team are kept up to date. Dedicated Home Care Services routinely goes well above and beyond the industry standards for supervision and visits to our clients. Through these frequent visits and collaborations with your physician and other key professionals, we aim to be proactive, staying ahead of subtle changes that can often lead to frustrating emergency room visits.",
-  },
-  {
-    isActive: false,
-    question: "How does Easy Frontend work?",
-    answer:
-      "When it comes to booking a holiday, we know everyone likes something different - so we've designed our getaways with you in mind. When it comes to booking a holiday, we know everyone likes something different.",
-  },
-  {
-    isActive: false,
-    question: "How often does your team upload resources?",
-    answer:
-      "When it comes to booking a holiday, we know everyone likes something different - so we've designed our getaways with you in mind. When it comes to booking a holiday, we know everyone likes something different.",
-  },
-  {
-    isActive: false,
-    question: "Can I get a refund if I cancel my subscription?",
-    answer:
-      "When it comes to booking a holiday, we know everyone likes something different - so we've designed our getaways with you in mind. When it comes to booking a holiday, we know everyone likes something different.",
-  },
-  {
-    isActive: false,
-    question: "Can I use Easy Frontend designs in my portfolio?",
-    answer:
-      "When it comes to booking a holiday, we know everyone likes something different - so we've designed our getaways with you in mind. When it comes to booking a holiday, we know everyone likes something different.",
-  },
-  {
-    isActive: false,
-    question: "Can I buy Easy Frontend extended license?",
-    answer:
-      "When it comes to booking a holiday, we know everyone likes something different - so we've designed our getaways with you in mind. When it comes to booking a holiday, we know everyone likes something different.",
-  },
-];
-
-const FaqItem = ({ faq }) => {
-  const [isOpen, setIsOpen] = useState(faq.isActive || false);
-
-  const toggleFaq = () => setIsOpen(!isOpen);
-
-  return (
-    <div className={isOpen && "active"}>
-      <a
-        href="#!"
-        className="btn px-0 py-4 w-full text-start flex justify-between items-center"
-        onClick={toggleFaq}
-      >
-        <span className="text-black font-medium text-lg">{faq.question}</span>
-        <FontAwesomeIcon
-          className="text-black"
-          icon={isOpen ? faChevronUp : faChevronDown}
-        />
-      </a>
-      <div
-        className={`${
-          isOpen ? "block" : "hidden"
-        } border-l-2 border-blue-600 mb-4`}
-      >
-        <div className="px-6">
-          <p className="text-gray-600">{faq.answer}</p>
-        </div>
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unescaped-entities */
+import { useEffect } from "react";
+import "keen-slider/keen-slider.min.css";
+import KeenSlider from "keen-slider";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+// Extracted Slide component
+const Slide = ({ title, content, author }) => (
+  <div className="keen-slider__slide">
+    <blockquote className="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
+      <div>
+        <Star className="h-5 w-5 text-green-500"/>
+        <p className="text-2xl font-bold text-rose-600 sm:text-3xl">{title}</p>
+        <p className="mt-4 leading-relaxed text-gray-700">{content}</p>
       </div>
-    </div>
-  );
-};
+      <footer className="mt-4 text-sm font-medium text-gray-700 sm:mt-6">
+        &mdash; {author}
+      </footer>
+    </blockquote>
+  </div>
+);
 
-FaqItem.propTypes = {
-  faq: PropTypes.object.isRequired,
-};
+// Main component
+const MyComponent = () => {
+  const slidesData = [
+    {
+      title: "Stayin' Alive",
+      content:
+        "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?",
+      author: "Michael Scott",
+    },
+    {
+      title: "Stayin' Alive",
+      content:
+        "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?",
+      author: "Michael Scott",
+    },
+    {
+      title: "Stayin' Alive",
+      content:
+        "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?",
+      author: "Michael Scott",
+    },
+  ];
 
-const WhyUs = () => {
+  useEffect(() => {
+    const keenSlider = new KeenSlider("#keen-slider", {
+      loop: true,
+      slides: {
+        origin: "center",
+        perView: 1.25,
+        spacing: 16,
+      },
+      breakpoints: {
+        "(min-width: 1024px)": {
+          slides: {
+            origin: "auto",
+            perView: 1.5,
+            spacing: 32,
+          },
+        },
+      },
+    });
+
+    const keenSliderPrevious = document.getElementById("keen-slider-previous");
+    const keenSliderNext = document.getElementById("keen-slider-next");
+
+    keenSliderPrevious.addEventListener("click", () => keenSlider.prev());
+    keenSliderNext.addEventListener("click", () => keenSlider.next());
+
+    return () => {
+      keenSlider.destroy();
+    };
+  }, []);
+
   return (
-    <section className=" light py-14 md:py-24 bg-white dark:bg-[#F5F5F5] text-zinc-900 dark:text-white">
-      <div className="container px-4 md:px-8 lg:px-20">
-        <div className="grid grid-cols-12 justify-center mb-12">
-          <div className="col-span-12 lg:col-span-8 lg:col-start-3 xl:px-11 text-center">
-            <h2 className="font-bold text-black text-[25px] md:text-[45px] leading-none mb-4">
-              Frequently Asked Questions
+    <section className="bg-[#F9FAFB]">
+      <div className="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center lg:gap-16">
+          <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-heading sm:text-4xl">
+              Don't just take our word for it...
             </h2>
-            <p className="text-lg opacity-70 text-gray-500">
-              Assumenda non repellendus distinctio nihil dicta sapiente,
-              quibusdam maiores, illum at, aliquid blanditiis eligendi
-              qui.Assumenda non repellendus distinctio nihil dicta sapiente,
-              quibusdam maiores
+            <p className="mt-4 text-gray-heading">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas
+              veritatis illo placeat harum porro optio fugit a culpa sunt id!
             </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1  md:grid-cols-12">
-          <div className="col-span-1 md:col-span-8 md:col-start-3">
-            <div className="bg-white shadow dark:shadow-none  p-6">
-              {faqList.map((faq, i) => (
-                <FaqItem faq={faq} key={i} />
-              ))}
-
-              <Button variant="outline"> View All FAQs</Button>
+            {/* Previous and Next buttons */}
+            <div className="hidden lg:mt-8 lg:flex lg:gap-4">
+              <button
+                aria-label="Previous slide"
+                id="keen-slider-previous-desktop"
+                className="rounded-full border border-rose-600 p-3 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+              >
+                <ChevronLeft />
+              </button>
+              <button
+                aria-label="Next slide"
+                id="keen-slider-next-desktop"
+                className="rounded-full border border-rose-600 p-3 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+              >
+                <ChevronRight />
+              </button>
             </div>
           </div>
+
+          {/* KeenSlider container */}
+          <div className="-mx-6 lg:col-span-2 lg:mx-0">
+            <div id="keen-slider" className="keen-slider">
+              {/* Mapping over the slidesData to render Slide component */}
+              {slidesData.map((slide, index) => (
+                <Slide key={index} {...slide} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Previous and Next buttons for small screens */}
+        <div className="mt-8 flex justify-center gap-4 lg:hidden">
+          <button
+            aria-label="Previous slide"
+            id="keen-slider-previous"
+            className="rounded-full border border-rose-600 p-4 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            aria-label="Next slide"
+            id="keen-slider-next"
+            className="rounded-full border border-rose-600 p-4 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+          >
+            <ChevronRight />
+          </button>
         </div>
       </div>
     </section>
   );
 };
 
-export default WhyUs;
+export default MyComponent;

@@ -29,12 +29,12 @@ export default {
         dimGrey: "hsl(var(--dim-grey))",
         lightGrey: "hsl(var(--light-grey))",
         iconsBlue: "hsl(var(--icons-blue))",
- 
+
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         blueHeading: "hsl(var(--blueHeading))",
         darkBlue: "hsl(var(--darkBlue))",
- 
+
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -70,7 +70,7 @@ export default {
           30: "#7B7B7B",
           50: "#585858",
           90: "#141414",
-          1000: "#333333"
+          heading: "#333333",
         },
         orange: {
           50: "#FF7C00",
@@ -79,7 +79,7 @@ export default {
         blue: {
           letter: "#000444",
           70: "#2D338C",
-          darkBlue: "#151D46"
+          darkBlue: "#151D46",
         },
         yellow: {
           50: "#FEC601",
