@@ -1,27 +1,45 @@
-import { Button } from "./Button";
-
 /* eslint-disable react/no-unescaped-entities */
 function CTA() {
   return (
     <div>
-      <section className="text-gray-600 body-font bg-[#F5F5F5] ">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-12">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+      <section className="text-gray-600 body-font py-14 md:py-24 bg-[#2F3E83] ">
+      <div className="container px-4">
+        <div className="grid grid-cols-12 lg:grid-cols-7 place-items-center text-center text-white">
+          <div className="col-span-12">
+            <h2 className="text-2xl md:text-[45px] leading-none font-bold mb-6">
               Contact Us Today!
-            </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Call us to set a time when you can stop by to tour our facility,
-              enjoy a meal and meet our wonderful staff.
-            </p>
-          </div>
-          <div className="flex lg:w-1/3  w-full flex-col mx-auto">
-            <Button variant="green" size="xlg">Request a tour </Button>
+            </h2>
+
+            <div className="grid grid-cols-12 place-items-center">
+              <div className="col-span-12 sm:col-span-6 sm:col-start-4 sm:px-3 md:px-12 lg:px-24">
+                <p className="text-lg leading-6 mb-12">
+                  Call us to set a time when you can stop by to tour our
+                  facility, enjoy a meal and meet our wonderful staff.
+                </p>
+                <form>
+                  <div className="relative flex flex-wrap items-center justify-between p-2 bg-white rounded w-full">
+                    <input
+                      type="email"
+                      className="min-h-12 leading-10 px-4 w-full"
+                      placeholder="Enter Email"
+                    />
+                    <div className="absolute right-1">
+                      <button className="bg-green-600 hover:bg-opacity-90 text-white border border-green-600 py-3 px-7 rounded transition font-normal">
+                        Request a tour
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
       </section>
     </div>
   );
 }
 
 export default CTA;
+
+

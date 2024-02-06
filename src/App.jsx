@@ -10,6 +10,7 @@ import Faqs from "./pages/Faqs";
 import AboutUsView from "./pages/AboutUsView";
 import Careers from "./pages/Careers";
 import BlogView from "./pages/Blog";
+import PageNotFound from "./pages/PageNotFound";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,11 +32,13 @@ function App() {
             <Route path="whyUs" element={<WhyUs />} />
             <Route path="faq" element={<Faqs />} />
             <Route path="about" element={<AboutUsView />} />
-            <Route path="careers" element={<Careers />} />
+            <Route path="Careers" element={<Careers />} />
             <Route path="blog" element={<BlogView />} />
 
             <Route element={<Resources />}></Route>
+            
           </Route>
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

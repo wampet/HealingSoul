@@ -33,8 +33,8 @@ const NavBar = () => {
       ],
     },
     {
-      title: "Covid-19",
-      path: "/blog",
+      title: "Careers",
+      path: "/Careers",
     },
     {
       title: "Contact Us",
@@ -42,20 +42,24 @@ const NavBar = () => {
     },
     {
       title: "Resources",
-      path: "/resources",
+      path: "#",
+      children: [
+        { title: "Blog", path: "/blog" },
+        { title: "FAQs", path: "/faq" },
+      ],
     },
   ];
 
   return (
-    <Container>
+    <Container> 
       <header className="flex flex-col lg:flex-row justify-between items-center py-4 ">
         <div className="flex w-full lg:w-auto items-center justify-between">
           <a href="/" className="text-lg">
-            <span className="font-bold text-slate-800">Healing</span>
+            <span className="font-bold text-gray-heading hover:text-orange-500">Healing</span>
             <span className="text-slate-500">Souls</span>
           </a>
           <div className="block lg:hidden">
-            <button onClick={() => setOpen(!open)} className="text-gray-800 ">
+            <button onClick={() => setOpen(!open)} className="text-gray-800  hover:text-orange-500">
               <Menu />
             </button>
           </div>
@@ -67,9 +71,10 @@ const NavBar = () => {
         >
           <ul className="flex flex-col lg:flex-row lg:gap-3">
             {menuitems.map((item, index) => (
-              <React.Fragment key={index}>
+              <React.Fragment key={index} className="hover:text-orange-500">
                 {item.children ? (
                   <Dropdown
+                     className="hover:text-orange-500"
                     title={item.title}
                     children={item.children}
                     lastItem={index === menuitems.length - 1}
@@ -78,7 +83,7 @@ const NavBar = () => {
                   <li>
                     <a
                       href={item.path}
-                      className="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900"
+                      className="flex lg:px-3 py-2 text-gray-heading hover:text-orange-500"
                     >
                       {item.title}
                     </a>

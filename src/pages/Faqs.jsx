@@ -73,7 +73,7 @@ const FaqItem = ({ faq }) => {
       <div
         className={`${
           isOpen ? "block" : "hidden"
-        } border-l-2 border-blue-600 mb-4`}
+        } border-l-2 border-green-600 mb-4`}
       >
         <div className="px-6">
           <p className="text-gray-600">{faq.answer}</p>
@@ -109,9 +109,9 @@ const Faqs = () => {
                 <FaqItem faq={faq} key={i} />
               ))}
 
-              <div className="pt-10">
-                <Button variant="green" size="lg" className="pt-10 w-full">
-                  {" "}
+              <div className="py-10">
+                <Button variant="green" size="xlg" className=" w-full">
+        
                   Contact us for any questions
                 </Button>
               </div>

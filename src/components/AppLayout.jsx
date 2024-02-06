@@ -6,7 +6,7 @@ import NavBar from "./navbar/NavBar";
 function AppLayout() {
   return (
     <div>
-      <header className="sticky top-0  z-30 bg-white ">
+      <header className="sticky top-0  z-30 bg-white shadow-sm">
         <NavBar />
       </header>
 

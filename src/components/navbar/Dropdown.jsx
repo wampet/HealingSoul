@@ -10,9 +10,9 @@ const Dropdown = ({ title, lastItem, children }) => {
     <li className="relative" onMouseLeave={() => setOpen(false)}>
       <button
         onClick={toggleOpen}
-        className="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-gray-900"
+        className="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-orange-500"
       >
-        <span>{title}</span>
+        <span className='hover:text-orange-500'>{title}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -34,7 +34,7 @@ const Dropdown = ({ title, lastItem, children }) => {
         >
           <div className="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col">
             {children.map((item, index) => (
-              <a key={index} href={item.path} className="py-1 text-gray-600 hover:text-gray-900">
+              <a key={index} href={item.path} className="py-1 text-gray-heading hover:text-green-500">
                 {item.title}
               </a>
             ))}
