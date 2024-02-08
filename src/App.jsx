@@ -10,7 +10,7 @@ import Faqs from "./pages/Faqs";
 import AboutUsView from "./pages/AboutUsView";
 import Careers from "./pages/Careers";
 import BlogView from "./pages/Blog";
-// import PageNotFound from "./pages/PageNotFound";
+import PageNotFound from "./pages/PageNotFound";
 import SkilledNursing from "./pages/SkilledNursing";
 
 const queryClient = new QueryClient({
@@ -39,7 +39,7 @@ function App() {
 
             <Route element={<Resources />}></Route>
           </Route>
-          {/* <Route path="*" element={<PageNotFound />} /> */}
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
