@@ -11,6 +11,7 @@ import AboutUsView from "./pages/AboutUsView";
 import Careers from "./pages/Careers";
 import BlogView from "./pages/Blog";
 import PageNotFound from "./pages/PageNotFound";
+import SkilledNursing from "./pages/SkilledNursing";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,9 +35,9 @@ function App() {
             <Route path="about" element={<AboutUsView />} />
             <Route path="Careers" element={<Careers />} />
             <Route path="blog" element={<BlogView />} />
+            <Route path="skilledNursing" element={<SkilledNursing />} />
 
             <Route element={<Resources />}></Route>
-            
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>

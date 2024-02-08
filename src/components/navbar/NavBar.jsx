@@ -17,7 +17,7 @@ const NavBar = () => {
       path: "#",
       children: [
         { title: "Company Overview", path: "/about" },
-        { title: "Why Healing Souls", path: "whyUs" },
+        { title: "Why Healing Souls", path: "/whyUs" },
         { title: "FAQs", path: "/faq" },
       ],
     },
@@ -25,7 +25,7 @@ const NavBar = () => {
       title: "Our Services",
       path: "#",
       children: [
-        { title: "Skilled Nursing", path: "#" },
+        { title: "Skilled Nursing", path: "/skilledNursing" },
         { title: "Rehabilitation", path: "#" },
         { title: "Companion Care", path: "/about" },
         { title: "Social Services", path: "#" },
