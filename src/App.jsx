@@ -12,6 +12,10 @@ import Careers from "./pages/Careers";
 import BlogView from "./pages/Blog";
 import PageNotFound from "./pages/PageNotFound";
 import SkilledNursing from "./pages/SkilledNursing";
+import Rehabilitation from "./pages/Rehabilitation";
+import CompanionCare from "./pages/CompanionCare";
+import SocialServices from "./pages/SocialServices";
+import SpecializedCare from "./pages/SpecializedCare";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,7 +39,11 @@ function App() {
             <Route path="about" element={<AboutUsView />} />
             <Route path="Careers" element={<Careers />} />
             <Route path="blog" element={<BlogView />} />
-            <Route path="skilledNursing" element={<SkilledNursing />} />
+            <Route path="skilled-nursing" element={<SkilledNursing />} />
+            <Route path="rehabilitation" element={<Rehabilitation />} />
+            <Route path="companion-care" element={<CompanionCare />} />
+            <Route path="social-services" element={<SocialServices />} />
+            <Route path="specialized-care" element={<SpecializedCare />} />
 
             <Route element={<Resources />}></Route>
           </Route>

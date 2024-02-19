@@ -25,11 +25,11 @@ const NavBar = () => {
       title: "Our Services",
       path: "#",
       children: [
-        { title: "Skilled Nursing", path: "/skilledNursing" },
-        { title: "Rehabilitation", path: "#" },
-        { title: "Companion Care", path: "/about" },
-        { title: "Social Services", path: "#" },
-        { title: "Activities", path: "#" },
+        { title: "Skilled Nursing", path: "/skilled-nursing" },
+        { title: "Rehabilitation", path: "/rehabilitation" },
+        { title: "Companion Care", path: "/companion-care" },
+        { title: "Specialized Care", path: "/specialized-care" },
+        { title: "Social Services", path: "/social-services" },
       ],
     },
     {
@@ -51,15 +51,20 @@ const NavBar = () => {
   ];
 
   return (
-    <Container> 
+    <Container>
       <header className="flex flex-col lg:flex-row justify-between items-center py-4 ">
         <div className="flex w-full lg:w-auto items-center justify-between">
           <a href="/" className="text-lg">
-            <span className="font-bold text-gray-heading hover:text-orange-500">Healing</span>
+            <span className="font-bold text-gray-heading hover:text-orange-500">
+              Healing
+            </span>
             <span className="text-slate-500">Souls</span>
           </a>
           <div className="block lg:hidden">
-            <button onClick={() => setOpen(!open)} className="text-gray-800  hover:text-orange-500">
+            <button
+              onClick={() => setOpen(!open)}
+              className="text-gray-800  hover:text-orange-500"
+            >
               <Menu />
             </button>
           </div>
@@ -74,7 +79,7 @@ const NavBar = () => {
               <React.Fragment key={index} className="hover:text-orange-500">
                 {item.children ? (
                   <Dropdown
-                     className="hover:text-orange-500"
+                    className="hover:text-orange-500"
                     title={item.title}
                     children={item.children}
                     lastItem={index === menuitems.length - 1}

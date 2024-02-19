@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+
 function CTA() {
   return (
     <div>
@@ -25,7 +25,7 @@ function CTA() {
                     />
                     <div className="absolute right-1">
                       <button className="bg-green-600 hover:bg-opacity-90 text-white border border-green-600 py-3 px-7 rounded transition font-normal">
-                        Request a tour
+                        Schedule a tour
                       </button>
                     </div>
                   </div>
