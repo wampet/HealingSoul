@@ -72,7 +72,7 @@ const testimonialsData = [
 function Testimonials() {
   return (
     <section>
-      <div className="max-w-screen-xl mx-auto sm:px-6">
+      <div className="max-w-screen-xl  px-12 ">
         <div className="py-12 md:py-20 border-t border-transparent dark:border-gray-300">
           <div className="max-w-sm mx-auto grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:gap-12 items-start sm:max-w-none md:max-w-2xl lg:max-w-none">
             {testimonialsData.map((testimonial, index) => (

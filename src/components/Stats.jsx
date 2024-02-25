@@ -21,8 +21,9 @@ function Stats() {
               <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span>
 
               <div className="p-8 sm:p-16 lg:p-24">
-                <h2 className="text-2xl font-bold sm:text-3xl">
-                We are deeply committed to our community, providing unwavering and exceptional care to our clients.
+                <h2 className="text-2xl font-bold sm:text-3xl text-gray-heading">
+                  We are deeply committed to our community, providing unwavering
+                  and exceptional care to our clients.
                 </h2>
 
                 <p className="my-4 text-gray-600">
@@ -36,8 +37,10 @@ function Stats() {
                   select few facilities that provide exclusively private rooms
                   for our residents.
                 </p>
-                <Button variant="green" size="xlg" className="mt-5 "> Get in Touch</Button>
-                
+                <Button variant="green" size="xlg" className="mt-5 ">
+                  {" "}
+                  Get in Touch
+                </Button>
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-children-prop */
 import React, { useState } from "react";
 import Container from "../Container";
-import logo from "../../assets/HealingSoulL.png";
+import home from "../../assets/home.png";
 import Dropdown from "./Dropdown";
 import { Menu } from "lucide-react";
 
@@ -58,8 +58,8 @@ const NavBar = () => {
           <a href="/" className="text-lg">
             <div className="">
               <img
-                src={logo}
-                alt="logo"
+                src={home}
+                alt="home"
 
                 className="h-12 w-auto"
               />

@@ -81,9 +81,9 @@ function Zigzag() {
 }
 
 const DetailFeature = ({ right, imageSrc, title, description, punchLines }) => (
-  <section className=" mx-auto max-w-screen-xl">
+  <section className=" max-w-screen-xl my-5">
     <div
-      className={`flex flex-col items-center md:items-start m-12 justify-center md:justify-start md:flex-row    md:my-10 ${
+      className={`flex flex-col items-center  sm:justify-start md:px-8 lg:m-12  md:flex-row    md:my-10 ${
         right ? "md:flex-row-reverse" : "flex-col"
       }`}
     >
