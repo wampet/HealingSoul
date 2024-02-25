@@ -12,7 +12,7 @@ const Dropdown = ({ title, lastItem, children }) => {
         onClick={toggleOpen}
         className="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 font-serif font-semibold text-gray-600 hover:text-orange-500"
       >
-        <span className='hover:text-orange-500'>{title}</span>
+        <span className='hover:text-orange-500 text-gray-heading '>{title}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
