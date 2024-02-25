@@ -33,17 +33,17 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Home />} />
-            <Route path="Contact" element={<ContactUs />} />
-            <Route path="whyUs" element={<WhyUs />} />
-            <Route path="faq" element={<Faqs />} />
-            <Route path="about" element={<AboutUsView />} />
-            <Route path="Careers" element={<Careers />} />
-            <Route path="blog" element={<BlogView />} />
-            <Route path="skilled-nursing" element={<SkilledNursing />} />
-            <Route path="rehabilitation" element={<Rehabilitation />} />
-            <Route path="companion-care" element={<CompanionCare />} />
-            <Route path="social-services" element={<SocialServices />} />
-            <Route path="specialized-care" element={<SpecializedCare />} />
+            <Route path="contact" element={<ContactUs />} />
+            <Route path="about/why-healing-soul" element={<WhyUs />} />
+            <Route path="resources/faq" element={<Faqs />} />
+            <Route path="about/company-overview" element={<AboutUsView />} />
+            <Route path="careers" element={<Careers />} />
+            <Route path="resources/blog" element={<BlogView />} />
+            <Route path="services/skilled-nursing" element={<SkilledNursing />} />
+            <Route path="services/rehabilitation" element={<Rehabilitation />} />
+            <Route path="services/companion-care" element={<CompanionCare />} />
+            <Route path="services/social-services" element={<SocialServices />} />
+            <Route path="services/specialized-care" element={<SpecializedCare />} />
 
             <Route element={<Resources />}></Route>
           </Route>

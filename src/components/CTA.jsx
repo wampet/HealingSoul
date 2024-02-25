@@ -2,7 +2,7 @@
 function CTA() {
   return (
     <div>
-      <section className="text-gray-600 body-font py-14 md:py-24 bg-[#2F3E83] ">
+      <section className="text-gray-600 body-font py-14 md:py-24 bg-[#2F8344] ">
       <div className="container px-4">
         <div className="grid grid-cols-12 lg:grid-cols-7 place-items-center text-center text-white">
           <div className="col-span-12">
@@ -24,8 +24,8 @@ function CTA() {
                       placeholder="Enter Email"
                     />
                     <div className="absolute right-1">
-                      <button className="bg-green-600 hover:bg-opacity-90 text-white border border-green-600 py-3 px-7 rounded transition font-normal">
-                        Schedule a tour
+                      <button className="bg-orange-500 hover:bg-opacity-90 text-white border border-orange-500 py-3 px-7 rounded transition font-normal">
+                        Book an Appointment
                       </button>
                     </div>
                   </div>
