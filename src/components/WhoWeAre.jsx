@@ -2,22 +2,23 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const stories = [
   {
-    text: "Acknowledging that the employees of an organization create its success",
+    text: "Realizing that an organization's workforce is what makes it successful",
   },
   {
-    text: "Maintaining no-compromise standard of excellence in healthcare and people care.",
+    text: "Upholding the uncompromising standard of quality in people-centered healthcare.",
   },
   {
-    text: "Setting a standard of excellence in the delivery of quality and wholesome care",
+    text: "Establishing a benchmark for excellence in the provision of healthful, high-quality care.",
   },
   {
-    text: "Find more creative ideas for your projects",
+    text: "Following the greatest ethical standards when conducting business.",
   },
   {
-    text: "Faucibus porta lacus fringilla vel",
+    text: "Upholding the confidence that our clients' relatives and friends have placed in us.",
   },
 ];
 
@@ -42,6 +43,8 @@ StoryItem.propTypes = {
 };
 
 const WhoWeAre = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-8 lg:my-10 sm:px-6 sm:py-12 lg:px-8 ">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
@@ -58,13 +61,13 @@ const WhoWeAre = () => {
           </h1>
           <hr className="bg-green-600 h-1 rounded-[3px] w-12 opacity-100 my-6" />
           <p className=" mb-2 text-gray-heading">
-            Guided by the principles of quality, respect, excellence, ethics and
-            integrity, we care for our community through uncompromised
-            Dedication to client care. In addition, in order to provide quality
-            driven, patient centered, integrated care to all who entrust us to
-            guide their healing process, health care needs, and individualized
-            care in the comfort of their home or place of residence, we are
-            committed to
+            We provide unwavering commitment to client care, guided by the
+            values of quality, respect, excellence, ethics, and integrity in
+            order to care for our community. Furthermore, to ensure that
+            everyone who entrusts us with guiding their recovery process, health
+            care needs, and personalized treatment in the comfort of their home
+            or place of residence receives quality-driven, patient-centered,
+            integrated care, we are dedicated to
           </p>
           <ul className="flex flex-col ezy__about9-features mt-5">
             {stories.map((item, i) => (
@@ -75,7 +78,7 @@ const WhoWeAre = () => {
           </ul>
 
           <div className="mt-5">
-            <Button variant="green">Learn more</Button>
+            <Button variant="green" onClick={ ()=>navigate("/about/company-overview")}>Learn more</Button>
           </div>
         </div>
       </div>

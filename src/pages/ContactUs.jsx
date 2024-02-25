@@ -41,24 +41,27 @@ function ContactSection() {
       title: "Knowledgebase",
       description: "We're here to help with any questions or code.",
       cta: "Contact support",
+      nav: ""
     },
     {
       Icon: ArrowBigDown,
       title: "FAQ",
       description: "Search our FAQ for answers to anything you might ask.",
       cta: "Visit FAQ",
+      nav: "/faq"
     },
     {
       Icon: Mail,
       title: "Contact us by email",
       description: "If you wish to write us an email instead please use",
-      cta: "lianah@gmail.com",
+      cta: "healingsoul77@yahoo.com",
+
     },
     {
       Icon: PhoneIcon,
       title: "Call us",
       description: "Prefer to speak with us directly? Give us a call.",
-      cta: "+256-751-772772",
+      cta: "+1 (617) 606-1716",
     },
   ];
 
@@ -162,9 +165,9 @@ function ContactSection() {
           <div className="divide-y">
             {contactDetails.map(({ Icon, title, description, cta }) => (
               <div key={title} className="flex gap-x-7 py-6">
-                <Icon className="h-6 w-6  text-white" />
+                <Icon className="h-6 w-6  text-gray-heading" />
                 <div className="grow">
-                  <h3 className="font-semibold text-black">{title}</h3>
+                  <h3 className="font-semibold text-gray-heading">{title}</h3>
                   <p className="mt-1 text-sm text-gray-600">{description}</p>
                   <a
                     className="mt-2 inline-flex items-center gap-x-1 text-sm font-medium text-gray-400 hover:text-red-500 "

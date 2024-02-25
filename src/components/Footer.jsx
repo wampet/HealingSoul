@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
 import {
@@ -7,7 +6,6 @@ import {
   Twitter as TwitterIcon,
   Youtube as YoutubeIcon,
 } from "lucide-react";
-import Input from "./Input";
 
 const socials = [
   { name: "Instagram", url: "https://instagram.com", Icon: InstagramIcon },
@@ -17,12 +15,17 @@ const socials = [
 ];
 
 const serviceLinks = [
-  { title: "Personalized in Home Care", href: "#" },
-  { title: "Skilled Nursing Services", href: "#" },
-  { title: "Rehabilitation Services", href: "#" },
-  { title: "Veteran Care", href: "#" },
-  { title: "Companion Care", href: "#" },
-  { title: "Staffing Services", href: "#" },
+  { title: "Skilled Nursing", path: "/services/skilled-nursing" },
+  { title: "Rehabilitation", path: "/services/rehabilitation" },
+  { title: "Companion Care", path: "/services/companion-care" },
+  { title: "Specialized Care", path: "/services/specialized-care" },
+  { title: "Social Services", path: "/services/social-services" },
+];
+const companyLinks = [
+  { title: "Company Overview", path: "/about/company-overview" },
+  { title: "Why Healing Soul", path: "/about/why-healing-soul" },
+  { title: "Careers", path: "/careers" },
+  { title: "Contact Us", path: "/contact" },
 ];
 const SocialMediaLink = ({ name, url, Icon }) => (
   <li>
@@ -39,7 +42,7 @@ const SocialMediaLink = ({ name, url, Icon }) => (
 );
 
 const Footer = () => (
-  <footer className="bg-[#151D46] text-white ">
+  <footer className="bg-[#1D4624] text-white ">
     <div className="max-w-screen-xl px-4 py-10 mx-auto sm:px-6 lg:px-4">
       <div className="flex flex-col space-x-0 space-y-2 md:flex-row md:space-y-0 md:space-x-2">
         <div className=" w-full lg:w-1/4 p-8">
@@ -81,25 +84,32 @@ const Footer = () => (
           <div className="flex flex-row justify-between">
             <div>
               <p className="font-medium">Services</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-white">
-                <a className="hover:opacity-75" href>
-                  Personalized in Home Care
-                </a>
-                <a className="hover:opacity-75" href>
-                  Skilled Nursing Services
-                </a>
-                <a className="hover:opacity-75" href>
-                  Veteran Care
-                </a>
-                <a className="hover:opacity-75" href>
-                  Staffing Services
-                </a>
+              <nav className="flex flex-col mt-4 space-y-2 text-sm text-white ">
+                {serviceLinks.map((item, index) => (
+                  <a
+                    className=" hover:text-orange-600"
+                    href={item.path}
+                    key={index}
+                  >
+                    {item.title}
+                  </a>
+                ))}
               </nav>
             </div>
             <div>
               <p className="font-medium">Company</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-white">
-                <a className="hover:opacity-75" href>
+                {companyLinks.map((item, index) => (
+                  <a
+                    className=" hover:text-orange-600"
+                    href={item.path}
+                    key={index}
+                  >
+                    {item.title}
+                  </a>
+                ))}
+
+                {/* <a className="hover:opacity-75" href>
                   About Us
                 </a>
                 <a className="hover:opacity-75" href="/blog">
@@ -110,7 +120,7 @@ const Footer = () => (
                 </a>
                 <a className="hover:opacity-75" href>
                   Help
-                </a>
+                </a> */}
               </nav>
             </div>
             <div>
@@ -126,7 +136,7 @@ const Footer = () => (
             </div>
           </div>
           <p className="mt-8 text-sm text-white">
-            Copyright © 2024 Healing Souls, All riight reserved
+            Copyright © 2024 Healing Soul, All rights reserved
           </p>
         </div>
       </div>
@@ -135,24 +145,3 @@ const Footer = () => (
 );
 
 export default Footer;
-
-const FooterLink = ({ href, children }) => (
-  <li>
-    <a href={href} className="text-white transition hover:opacity-75">
-      {children}
-    </a>
-  </li>
-);
-
-const FooterColumn = ({ title, links }) => (
-  <div>
-    <p className="font-medium text-gray-900">{title}</p>
-    <ul className="mt-6 space-y-4 text-sm">
-      {links.map((link, index) => (
-        <FooterLink href={link.href} key={index}>
-          {link.title}
-        </FooterLink>
-      ))}
-    </ul>
-  </div>
-);

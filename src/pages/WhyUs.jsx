@@ -13,9 +13,9 @@ import TestimonialImage04 from "../assets/images/testimonial-04.jpg";
 function WhyUs() {
   return (
     <div>
-      <div className="max-w-screen-xl  text-center mx-auto mt-10">
-        <h2 className="text-2xl leading-snug md:text-5xl md:leading-snug font-bold mb-2">
-          Why Healing Souls?
+      <div className="mx-auto max-w-screen-xl px-12 py-4">
+        <h2 className="text-2xl leading-snug md:text-4xl md:leading-snug font-bold mb-2">
+          Why Healing Soul?
         </h2>
         <p className="text-md opacity-80 mb-4">
           We are reshaping what senior living should be-communities where each
