@@ -1,3 +1,4 @@
+import Banner from "../components/Banner";
 import CoreValues from "../components/CoreValues";
 import TwoColorHeading from "../components/TwoToneTitle";
 
@@ -5,7 +6,11 @@ import TwoColorHeading from "../components/TwoToneTitle";
 function AboutUsView() {
   return (
     <div>
-      {/* <AboutUs /> */}
+      <Banner
+        title="Company Overview"
+        subtitle="Home > Company Overview"
+        backgroundImage="https://cdn2.hubspot.net/hubfs/747395/How%20to%20Find%20the%20Right%20Assisted%20Senior%20Living%20in%20Greenville%20SC.jpg"
+      />
       <Stuff />
       <CoreValues />
     </div>
@@ -14,14 +19,13 @@ function AboutUsView() {
 
 export default AboutUsView;
 
-
 const Stuff = () => {
   return (
     <section className=" text-gray-heading">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 ">
         <div className="mb-10">
-          <TwoColorHeading firstWord="Our" secondWord="Story" />
-          <p className="text-gray-heading">
+          <TwoColorHeading firstWord="About" secondWord="Us" />
+          <p className="text-gray-heading mt-2">
             We provide unwavering commitment to client care, guided by the
             values of quality, respect, excellence, ethics, and integrity in
             order to care for our community. Furthermore, to ensure that
@@ -33,14 +37,14 @@ const Stuff = () => {
         </div>
         <div className="mb-10">
           <TwoColorHeading firstWord="Mission" secondWord="Statement" />
-          <p className="text-gray-heading">
+          <p className="text-gray-heading mt-2">
             Upholding the uncompromising standard of quality in people-centered
             healthcare.
           </p>
         </div>
         <div className="">
           <TwoColorHeading firstWord="Our" secondWord="Vision" />
-          <p className="text-gray-heading">
+          <p className="text-gray-heading mt-2">
             We provide unwavering commitment to client care, guided by the
             values of quality, respect, excellence, ethics, and integrity in
             order to care for our community.

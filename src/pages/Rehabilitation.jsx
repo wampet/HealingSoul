@@ -1,38 +1,34 @@
-import AboutService from "../components/AboutService"
+import AboutService from "../components/AboutService";
 
 const stories = [
-    {
-      text: "Acknowledging that the employees of an organization create its success",
-    },
-    {
-      text: "Maintaining no-compromise standard of excellence in healthcare and people care.",
-    },
-    {
-      text: "Setting a standard of excellence in the delivery of quality and wholesome care",
-    },
-    {
-      text: "Find more creative ideas for your projects",
-    },
-    {
-      text: "Faucibus porta lacus fringilla vel",
-    },
-  ];
-
+  {
+    text: "Providing personalized rehabilitation plans tailored to individual needs, ensuring optimal recovery and well-being.",
+  },
+  {
+    text: "Maintaining a commitment to excellence in healthcare, delivering quality and wholesome care to every patient.",
+  },
+  {
+    text: "Setting a standard of excellence in rehabilitation services, striving for optimal outcomes and patient satisfaction.",
+  },
+  {
+    text: "Offering innovative rehabilitation techniques and therapies to enhance recovery and improve quality of life.",
+  },
+  {
+    text: "Fostering a supportive and compassionate environment to empower patients on their journey to recovery.",
+  },
+];
 
 function Rehabilitation() {
-    return (
-        <div>
-            <AboutService
+  return (
+    <div>
+      <AboutService
         imageUrl="https://careoptionsforkids.com/hubfs/Imported_Blog_Media/Difference-Between-Skilled-Nursing-Facilities-and-Nursing-Homes-1.jpg"
         heading="Rehabilitation"
-        paragraph="When you’re not feeling well, you want to know there’s a team that you can turn to. 
-        With our full range of nursing services, including skilled and long-term care, we can help you manage whatever the future may bring. Partnering with your family, 
-        we become an extension of them to ensure you receive what you need when you need it."
+        paragraph="At Healing Home, we recognize the pivotal role of comprehensive rehabilitation services in restoring health and well-being. Our dedicated team of professionals designs personalized rehabilitation plans tailored to each individual's unique needs, ensuring optimal recovery and long-term success. Through innovative techniques and compassionate care, we empower our patients to regain independence and improve their quality of life. With a commitment to excellence and a focus on patient-centered care, we strive to make a positive difference in the lives of those we serve."
         stories={stories}
       />
-     
-        </div>
-    )
+    </div>
+  );
 }
 
-export default Rehabilitation
+export default Rehabilitation;

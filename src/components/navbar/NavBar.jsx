@@ -31,6 +31,7 @@ const NavBar = () => {
         { title: "Companion Care", path: "/services/companion-care" },
         { title: "Specialized Care", path: "/services/specialized-care" },
         { title: "Social Services", path: "/services/social-services" },
+        { title: "Book a service", path: "/services/book-a-service" },
       ],
     },
     {
@@ -45,7 +46,7 @@ const NavBar = () => {
       title: "Resources",
       path: "#",
       children: [
-        { title: "Blog", path: "/resources/blog" },
+        { title: "Useful Links", path: "/resources/useful-links" },
         { title: "FAQs", path: "/resources/faq" },
       ],
     },

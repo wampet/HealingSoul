@@ -1,77 +1,116 @@
-/* eslint-disable react/no-unescaped-entities */
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../components/Form";
-import { ArrowBigDown, ArrowRightIcon, Mail, PhoneIcon } from "lucide-react";
+/* eslint-disable react/prop-types */
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import PropTypes from "prop-types";
-import Input from "../components/Input";
+/* eslint-disable react/no-unescaped-entities */
+
+import { ArrowBigDown, ArrowRightIcon, Mail, PhoneIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { Textarea } from "../components/TextArea";
 import { Button } from "../components/Button";
 
+// import emailjs from "emailjs-com";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+import { useRef, useState } from "react";
+import { Icons } from "../components/Icons";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
+import TwoColorHeading from "../components/TwoToneTitle";
+import InputField from "../components/InputField";
+
+const contactDetails = [
+  {
+    Icon: ArrowBigDown,
+    title: "Knowledgebase",
+    description: "We're here to help with any questions or code.",
+    cta: "Contact support",
+    nav: "",
+  },
+  {
+    Icon: ArrowBigDown,
+    title: "FAQ",
+    description: "Search our FAQ for answers to anything you might ask.",
+    cta: "Visit FAQ",
+    nav: "/faq",
+  },
+  {
+    Icon: Mail,
+    title: "Contact us by email",
+    description: "If you wish to write us an email instead please use",
+    cta: "healingsoul77@yahoo.com",
+  },
+  {
+    Icon: PhoneIcon,
+    title: "Call us",
+    description: "Prefer to speak with us directly? Give us a call.",
+    cta: "+1 (617) 606-1716",
+  },
+];
+const contactFormSchema = z.object({
+  user_name: z
+    .string()
+    .nonempty({ message: "Name is required." })
+    .min(2, { message: "Name must be at least 2 characters." })
+    .max(50, { message: "Name must not be longer than 50 characters." }),
+  user_email: z
+    .string()
+    .nonempty({ message: "Email is required." })
+    .regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, {
+      message: "Invalid email address format.",
+    }),
+  user_phone: z
+    .string()
+    .nonempty({ message: "Phone number is required." })
+    .min(10, { message: "Phone number must be at least 10 digits." })
+    .max(15, { message: "Phone number must not be longer than 15 digits." }),
+
+  user_message: z
+    .string()
+    .nonempty({ message: "Message is required." })
+    .min(10, { message: "Message must be at least 10 characters." })
+    .max(1000, { message: "Message must not be longer than 1000 characters." }),
+});
+
 function ContactUs() {
-  return (
-    <div>
-      <main className="bg-white">
-        <ContactSection />
-      </main>
-    </div>
-  );
-}
+  const form = useRef();
+  const [isLoading, setIsLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: zodResolver(contactFormSchema),
+  });
 
-export default ContactUs;
+  const handleForm = () => {
+    setIsLoading(true);
+    emailjs
+      .sendForm(
+        "service_0rw7j1s",
+        "template_oqahd3t",
+        form.current,
+        "rVCKe5q-U0074tP_N"
+      )
+      .then(
+        () => {
+          setIsLoading(false);
+          toast.success("Email sent successfully!");
 
-function ContactSection() {
-  const form = useForm({});
-
-  function onSubmit(data) {
-    console.log(data);
-  }
-  // Define your contact details once, so you can map through them if you need to add more sections
-  const contactDetails = [
-    {
-      Icon: ArrowBigDown,
-      title: "Knowledgebase",
-      description: "We're here to help with any questions or code.",
-      cta: "Contact support",
-      nav: ""
-    },
-    {
-      Icon: ArrowBigDown,
-      title: "FAQ",
-      description: "Search our FAQ for answers to anything you might ask.",
-      cta: "Visit FAQ",
-      nav: "/faq"
-    },
-    {
-      Icon: Mail,
-      title: "Contact us by email",
-      description: "If you wish to write us an email instead please use",
-      cta: "healingsoul77@yahoo.com",
-
-    },
-    {
-      Icon: PhoneIcon,
-      title: "Call us",
-      description: "Prefer to speak with us directly? Give us a call.",
-      cta: "+1 (617) 606-1716",
-    },
-  ];
+          reset();
+        },
+        () => {
+          toast.error("Error sending email. Please try again.");
+          setIsLoading(false);
+        }
+      );
+  };
 
   return (
     <div className="max-w-screen-xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-      <div className="max-w-2xl lg:max-w-5xl mx-auto">
+      <div className="max-w-2xl lg:max-w-screen-xl mx-auto">
         <div className="">
-          <h1 className="text-3xl font-bold text-gray-heading sm:text-4xl ">
-            Contact us
-          </h1>
+          <TwoColorHeading firstWord="Contact" secondWord="Us" />
+
           <p className="mt-1 text-gray-600 dark:text-gray-heading text-xl">
             We'd love to talk about how we can help you.
           </p>
@@ -84,74 +123,58 @@ function ContactSection() {
             <h2 className="mb-8 text-xl font-semibold">Fill in the form</h2>
             {/* Form */}
             <div className="grid gap-4 ">
-              <Form {...form}>
-                <form
-                  onSubmit={form.handleSubmit(onSubmit)}
-                  className="space-y-4"
-                >
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your name" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="workEmail"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Work email</FormLabel>
-                        <FormControl>
-                          <Input placeholder="" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone</FormLabel>
-                        <FormControl>
-                          <Input placeholder="" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Tell us a little bit about yourself"
-                            className="resize-none"
-                            {...field}
-                          />
-                        </FormControl>
+              <form ref={form} onSubmit={handleSubmit(handleForm)}>
+                <InputField
+                  label="Name"
+                  id="name"
+                  type="text"
+                  placeholder="Your name"
+                  name="user_name"
+                  register={register}
+                  errors={errors}
+                />
+                <InputField
+                  label="Email"
+                  id="email"
+                  type="email"
+                  placeholder="Your email address"
+                  name="user_email"
+                  register={register}
+                  errors={errors}
+                />
+                <InputField
+                  label="Phone"
+                  id="phone"
+                  type="tel"
+                  placeholder="Your phone number"
+                  name="user_phone"
+                  register={register}
+                  errors={errors}
+                />
+                <InputField
+                  label="Message"
+                  id="message"
+                  type="textarea"
+                  placeholder="Your message"
+                  name="user_message"
+                  register={register}
+                  errors={errors}
+                />
 
-                        <FormMessage />
-                      </FormItem>
+                <div className="flex items-center justify-between">
+                  <Button
+                    type="submit"
+                    disabled={isLoading}
+                    variant="green"
+                    className="w-full"
+                  >
+                    {isLoading && (
+                      <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                     )}
-                  />
-
-                  <Button type="submit" variant="green" className="w-full">
                     Contact us
                   </Button>
-                </form>
-              </Form>
+                </div>
+              </form>
 
               <div className="mt-3 text-center">
                 <p className="text-sm ">
@@ -185,3 +208,7 @@ function ContactSection() {
     </div>
   );
 }
+
+// InputField.js
+
+export default ContactUs;

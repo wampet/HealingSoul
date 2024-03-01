@@ -10,22 +10,16 @@ import TestimonialImage01 from "../assets/images/testimonial-01.jpg";
 import TestimonialImage02 from "../assets/images/testimonial-02.jpg";
 import TestimonialImage03 from "../assets/images/testimonial-03.jpg";
 import TestimonialImage04 from "../assets/images/testimonial-04.jpg";
+import Banner from "../components/Banner";
 function WhyUs() {
   return (
     <div>
-      <div className="mx-auto max-w-screen-xl px-12 py-4">
-        <h2 className="text-2xl leading-snug md:text-4xl md:leading-snug font-bold mb-2">
-          Why Healing Soul?
-        </h2>
-        <p className="text-md opacity-80 mb-4">
-          We are reshaping what senior living should be-communities where each
-          resident is a citizen who has influence, autonomy, and a vital role in
-          its overall well-being. With a vision of creating communities where
-          aging is honored and celebrated, we are committed to breaking the
-          barriers built by ageism and empowering older adults to live with
-          purpose.
-        </p>
-      </div>
+      <Banner
+        title="Why Healing Soul?"
+        subtitle="We are the best"
+        backgroundImage="https://cdn2.hubspot.net/hubfs/747395/How%20to%20Find%20the%20Right%20Assisted%20Senior%20Living%20in%20Greenville%20SC.jpg"
+      />
+  
       <Zigzag />
       <Testimonials />
     </div>
@@ -39,7 +33,7 @@ const testimonialsData = [
     imageSrc: TestimonialImage01,
     alt: "Testimonial 01",
     quote:
-      "I'm extremely satisfied with the care and support provided by your nursing home. The staff members are highly professional and compassionate. My experience here has been nothing short of excellent.",
+      "I'm extremely satisfied with the care and support provided by Healing Soul. The staff members are highly professional and compassionate. My experience here has been nothing short of excellent.",
     author: "John Smith",
     organization: "Happy Living Senior Care",
   },
@@ -47,7 +41,7 @@ const testimonialsData = [
     imageSrc: TestimonialImage02,
     alt: "Testimonial 02",
     quote:
-      "I want to express my gratitude to your nursing home for the exceptional care my mother received during her stay. Your team went above and beyond to ensure her comfort and well-being.",
+      "I want to express my gratitude to Healing Soul for the exceptional care my mother received during her stay. Your team went above and beyond to ensure her comfort and well-being.",
     author: "Emily Johnson",
     organization: "Loving Hands Assisted Living",
   },
@@ -55,7 +49,7 @@ const testimonialsData = [
     imageSrc: TestimonialImage03,
     alt: "Testimonial 03",
     quote:
-      "My family and I are thankful for the wonderful care provided by your nursing home. The staff members are attentive, caring, and treat residents with respect and dignity.",
+      "My family and I are thankful for the wonderful care provided by Healing Soul. The staff members are attentive, caring, and treat residents with respect and dignity.",
     author: "Michael Brown",
     organization: "Forever Young Nursing Home",
   },
@@ -63,7 +57,7 @@ const testimonialsData = [
     imageSrc: TestimonialImage04,
     alt: "Testimonial 04",
     quote:
-      "I couldn't be happier with the care my grandfather received at your nursing home. The facilities are clean and well-maintained, and the staff members are truly dedicated to their work.",
+      "I couldn't be happier with the care my grandfather received at Healing Soul Home. The facilities are clean and well-maintained, and the staff members are truly dedicated to their work.",
     author: "Sarah Davis",
     organization: "Golden Years Senior Living",
   },
@@ -72,7 +66,7 @@ const testimonialsData = [
 function Testimonials() {
   return (
     <section>
-      <div className="max-w-screen-xl  px-12 ">
+      <div className="max-w-screen-2xl  px-12 ">
         <div className="py-12 md:py-20 border-t border-transparent dark:border-gray-300">
           <div className="max-w-sm mx-auto grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:gap-12 items-start sm:max-w-none md:max-w-2xl lg:max-w-none">
             {testimonialsData.map((testimonial, index) => (
@@ -82,7 +76,7 @@ function Testimonials() {
                 alt={testimonial.alt}
                 quote={testimonial.quote}
                 author={testimonial.author}
-                organization={testimonial.organization}
+            
               />
             ))}
           </div>

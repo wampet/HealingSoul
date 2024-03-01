@@ -4,7 +4,6 @@ import * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import { Controller, useFormContext, FormProvider } from "react-hook-form";
 
-
 const Form = FormProvider;
 
 const FormFieldContext = React.createContext({ name: "" });
@@ -55,11 +54,11 @@ const FormItem = ({ className, ...props }) => {
 FormItem.displayName = "FormItem";
 
 const FormLabel = ({ className, ...props }) => {
-  const { error, formItemId } = useFormField();
+  const { formItemId } = useFormField();
 
   return (
     <LabelPrimitive.Root
-      className={`text-sm  ${error ? "text-destructive" : ""} ${className} pb-0`}
+      className={`text-sm   ${className} pb-0`}
       htmlFor={formItemId}
       {...props}
     />
@@ -113,7 +112,7 @@ const FormMessage = ({ className, children, ...props }) => {
   return (
     <p
       id={formMessageId}
-      className={`text-[0.8rem] font-medium text-destructive ${className}`}
+      className={`text-xs  text-destructive ${className}`}
       {...props}
     >
       {body}

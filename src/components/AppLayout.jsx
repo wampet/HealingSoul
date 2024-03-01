@@ -8,7 +8,7 @@ function AppLayout() {
   return (
     <div>
       <TopBanner />
-      <header className="sticky top-0  z-30 bg-white shadow-sm">
+      <header className="sticky top-0  z-30 bg-white shadow-md">
         <NavBar />
       </header>
 

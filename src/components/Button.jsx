@@ -6,7 +6,7 @@ import { Slot } from '@radix-ui/react-slot';
 const buttonVariants = {
   default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
   orange: "bg-orange-50 text-white hover:bg-orange-55",
-  green: "border-green-50 bg-green-50 text-white  hover:bg-green-800",
+  green: "border-[#16A34A] bg-[#16A34A] text-white  hover:bg-green-800",
   destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
   outline: "border border-input  bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
   secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",

@@ -1,20 +1,21 @@
 import AboutService from "../components/AboutService";
+import BottomCAT from "../components/BottomCAT";
 
-const stories = [
+const socialServicesStories = [
   {
-    text: "Acknowledging that the employees of an organization create its success",
+    text: "Providing compassionate support and assistance to enhance social well-being and overall quality of life."
   },
   {
-    text: "Maintaining no-compromise standard of excellence in healthcare and people care.",
+    text: "Maintaining a commitment to excellence in social services, setting the standard for compassionate and person-centered care."
   },
   {
-    text: "Setting a standard of excellence in the delivery of quality and wholesome care",
+    text: "Partnering with residents and their families to create meaningful social activities and connections, fostering a sense of community and belonging."
   },
   {
-    text: "Find more creative ideas for your projects",
+    text: "Innovating to meet the evolving needs of residents, offering creative solutions and engaging programs for enhanced social engagement."
   },
   {
-    text: "Faucibus porta lacus fringilla vel",
+    text: "Ensuring a welcoming and inclusive environment where residents feel valued, respected, and supported in their social interactions."
   },
 ];
 
@@ -24,11 +25,11 @@ function SocialServices() {
       <AboutService
         imageUrl="https://careoptionsforkids.com/hubfs/Imported_Blog_Media/Difference-Between-Skilled-Nursing-Facilities-and-Nursing-Homes-1.jpg"
         heading="Social Services"
-        paragraph="When you’re not feeling well, you want to know there’s a team that you can turn to. 
-        With our full range of nursing services, including skilled and long-term care, we can help you manage whatever the future may bring. Partnering with your family, 
-        we become an extension of them to ensure you receive what you need when you need it."
-        stories={stories}
+        paragraph="At Healing Home, we recognize the importance of social well-being in promoting overall quality of life for our residents. Our social services encompass a range of programs and support initiatives aimed at fostering meaningful connections, engagement, and fulfillment. From creative activities to community events, we strive to create an environment where residents feel valued, respected, and supported in their social interactions. Partnering closely with residents and their families, we tailor our services to meet individual needs and preferences, ensuring a warm and welcoming atmosphere where everyone feels at home."
+        stories={socialServicesStories}
       />
+
+      <BottomCAT/>
     </div>
   );
 }
