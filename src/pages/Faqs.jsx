@@ -50,7 +50,39 @@ const faqList = [
     answer:
       "We offer a wide range of activities including social events, fitness programs, arts and crafts, games, and outings. Our amenities include comfortable common areas, a library, a garden, and dining services catering to various dietary needs.",
   },
+  // Additional Questions
+  {
+    isActive: false,
+    question: "Do you provide 24/7 medical assistance?",
+    answer:
+      "Yes, our nursing home provides round-the-clock medical assistance to ensure the health and well-being of our residents.",
+  },
+  {
+    isActive: false,
+    question: "Are there any religious services offered?",
+    answer:
+      "We offer religious services and spiritual support to accommodate the diverse spiritual needs of our residents.",
+  },
+  {
+    isActive: false,
+    question: "Is there a waiting list for admission?",
+    answer:
+      "Admission to our nursing home is subject to availability. However, we strive to accommodate new residents in a timely manner.",
+  },
+  {
+    isActive: false,
+    question: "Can residents bring their pets?",
+    answer:
+      "Yes, we understand the importance of pets in our residents' lives. We have pet-friendly policies and facilities to accommodate residents' beloved pets.",
+  },
+  {
+    isActive: false,
+    question: "How do you handle medical emergencies?",
+    answer:
+      "We have trained staff capable of handling medical emergencies efficiently. We also have protocols in place to coordinate with emergency services when necessary.",
+  },
 ];
+
 
 const FaqItem = ({ faq, isOpen, toggleFaq }) => {
   return (
@@ -106,29 +138,27 @@ const Faqs = () => {
       />
 
       <div className="py-14 md:py-20 bg-[#F5F5F5]">
-        <div className=" px-8 md:px-8 lg:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-14">
-            <div className="col-span-1 md:col-span-10 md:col-start-2">
-              <div className="bg-white shadow dark:shadow-none p-8">
-                {faqList.map((faq, i) => (
-                  <FaqItem
-                    faq={faq}
-                    key={i}
-                    isOpen={activeIndex === i}
-                    toggleFaq={() => toggleFaq(i)}
-                  />
-                ))}
+        <div className="px-8 md:px-8 lg:px-20">
+          <div className="col-span-10 col-start-2">
+            <div className="bg-white shadow dark:shadow-none p-8">
+              {faqList.map((faq, i) => (
+                <FaqItem
+                  faq={faq}
+                  key={i}
+                  isOpen={activeIndex === i}
+                  toggleFaq={() => toggleFaq(i)}
+                />
+              ))}
 
-                <div className="py-10">
-                  <Button
-                    onClick={() => navigate("/contact")}
-                    variant="green"
-                    size="xlg"
-                    className="w-full"
-                  >
-                    Contact us for any questions
-                  </Button>
-                </div>
+              <div className="py-10">
+                <Button
+                  onClick={() => navigate("/contact")}
+                  variant="green"
+                  size="xlg"
+                  className="w-full"
+                >
+                  Contact us for any questions
+                </Button>
               </div>
             </div>
           </div>

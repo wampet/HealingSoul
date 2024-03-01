@@ -19,10 +19,10 @@ const ResourceLink = ({ name, url }) => (
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="hover:bg-green-200 block p-10 bg-white border rounded-md cursor-pointer hover:shadow-lg transition-shadow"
+    className=" hover:bg-green-200 block p-10 bg-white border rounded-md cursor-pointer hover:shadow-lg transition-shadow"
   >
-    <h3 className="font-semibold text-xl">{name}</h3>
-    <p>{url}</p>
+    <h3 className="font-semibold text-xl  ">{name}</h3>
+    <p className="text-gray-heading">{url}</p>
   </a>
 );
 

@@ -13,7 +13,7 @@ const Stats = () => {
               <img
                 src="https://images.pexels.com/photos/7551623/pexels-photo-7551623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
-                className="max-w-full h-auto rounded-3xl "
+                className="max-w-full h-full rounded-3xl "
               />
             </div>
             <div className="lg:w-1/2">
@@ -23,18 +23,13 @@ const Stats = () => {
                     We are deeply committed to our community, providing
                     unwavering and exceptional care to our clients.
                   </h2>
-                  <p className="text-lg opacity-80 mb-12 lg:mr-12">
+                  <p className="text-md opacity-80 mb-12 lg:mr-12">
                     Our primary goal is to assist our residents in regaining
                     their optimal functional abilities. We offer specialized
                     physical, occupational, and speech therapy, carefully
                     customized to meet the individual requirements of each
                     resident.
-                    <br />
-                    From the very first day of admission, we initiate a tailored
-                    rehabilitation screening process. Upholding our residents'
-                    privacy is of utmost importance to us. We take pride in
-                    being among the select few facilities that provide
-                    exclusively private rooms for our residents.
+              
                   </p>
                   <div className="flex justify-between gap-4 flex-nowrap">
                     {counters.map((counter, index) => (

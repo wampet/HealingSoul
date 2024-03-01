@@ -23,7 +23,7 @@ function SocialServices() {
   return (
     <div>
       <AboutService
-        imageUrl="https://careoptionsforkids.com/hubfs/Imported_Blog_Media/Difference-Between-Skilled-Nursing-Facilities-and-Nursing-Homes-1.jpg"
+        imageUrl= "https://plus.unsplash.com/premium_photo-1664476958156-367e84136f26?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8OXw3X0NTTlhFWjAtb3x8ZW58MHx8fHx8"
         heading="Social Services"
         paragraph="At Healing Home, we recognize the importance of social well-being in promoting overall quality of life for our residents. Our social services encompass a range of programs and support initiatives aimed at fostering meaningful connections, engagement, and fulfillment. From creative activities to community events, we strive to create an environment where residents feel valued, respected, and supported in their social interactions. Partnering closely with residents and their families, we tailor our services to meet individual needs and preferences, ensuring a warm and welcoming atmosphere where everyone feels at home."
         stories={socialServicesStories}

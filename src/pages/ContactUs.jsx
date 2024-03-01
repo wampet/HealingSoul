@@ -2,7 +2,7 @@
 
 /* eslint-disable react/no-unescaped-entities */
 
-import { ArrowBigDown, ArrowRightIcon, Mail, PhoneIcon } from "lucide-react";
+import { ArrowBigDown, ArrowRightIcon, HelpCircle, Mail, PhoneIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Button } from "../components/Button";
 
@@ -21,28 +21,30 @@ const contactDetails = [
   {
     Icon: ArrowBigDown,
     title: "Knowledgebase",
-    description: "We're here to help with any questions or code.",
-    cta: "Contact support",
-    nav: "",
+    description: "If you want to read more about who we are and what we do",
+    cta: "About us",
+    nav: "/about/company-overview",
   },
   {
-    Icon: ArrowBigDown,
+    Icon: HelpCircle,
     title: "FAQ",
     description: "Search our FAQ for answers to anything you might ask.",
     cta: "Visit FAQ",
-    nav: "/faq",
+    nav: "/resources/faq",
   },
   {
     Icon: Mail,
     title: "Contact us by email",
     description: "If you wish to write us an email instead please use",
     cta: "healingsoul77@yahoo.com",
+    nav: "mailto:healingsoul77@yahoo.com",
   },
   {
     Icon: PhoneIcon,
     title: "Call us",
     description: "Prefer to speak with us directly? Give us a call.",
     cta: "+1 (617) 606-1716",
+    nav: "tel:+16176061716",
   },
 ];
 const contactFormSchema = z.object({
@@ -186,15 +188,15 @@ function ContactUs() {
 
           {/* Contact Information */}
           <div className="divide-y">
-            {contactDetails.map(({ Icon, title, description, cta }) => (
+            {contactDetails.map(({ Icon, title, description, cta,nav }) => (
               <div key={title} className="flex gap-x-7 py-6">
-                <Icon className="h-6 w-6  text-gray-heading" />
+                <Icon className="h-8 w-8  text-green-50" />
                 <div className="grow">
                   <h3 className="font-semibold text-gray-heading">{title}</h3>
                   <p className="mt-1 text-sm text-gray-600">{description}</p>
                   <a
-                    className="mt-2 inline-flex items-center gap-x-1 text-sm font-medium text-gray-400 hover:text-red-500 "
-                    href="#"
+                    className="mt-2 inline-flex items-center gap-x-1 text-sm font-medium text-gray-500 hover:text-orange-500 "
+                    href={nav}
                   >
                     {cta}
                     <ArrowRightIcon className="h-4 w-4" />

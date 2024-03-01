@@ -66,19 +66,19 @@ import AboutService from "../components/AboutService";
 
 const skilledNursingStories = [
   {
-    text: "Delivering compassionate and expert care to ensure optimal health outcomes for every patient."
+    text: "Compassionate, expert care for optimal health."
   },
   {
-    text: "Maintaining a commitment to excellence in healthcare, setting a standard for quality and compassionate care."
+    text: "Commitment to excellence in healthcare."
   },
   {
-    text: "Empowering patients through education and support, fostering independence and well-being."
+    text: "Empowering patients for independence and well-being."
   },
   {
-    text: "Innovating to meet evolving healthcare needs, providing cutting-edge solutions for enhanced patient care."
+    text: "Innovative solutions for enhanced patient care."
   },
   {
-    text: "Providing holistic care that addresses the physical, emotional, and spiritual needs of patients."
+    text: "Holistic care for physical, emotional, and spiritual needs."
   },
 ];
 

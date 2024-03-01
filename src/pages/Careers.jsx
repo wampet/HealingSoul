@@ -36,7 +36,7 @@ const contents = [
     },
     {
       title: "Certified Medication Aide (CMA)",
-      desc: "We are looking for certified medication aides (CMAs) to administer medications to residents.",
+      desc: "We are looking for certified medication aides (CMAs).",
       link: "#",
       nursingHome: "Nursing Home F",
     },
@@ -45,7 +45,7 @@ const contents = [
 
 const CareerCard = ({ content }) => {
   return (
-    <div className="bg-[#ECEEF5] rounded">
+    <div className="bg-[#e2f0e8] rounded-xl hover:bg-green-300">
       <div className="flex p-4 md:p-6 md:pb-8">
         <div className="grid grid-cols-12 gap-2 justify-between">
           <div className="col-span-12 lg:col-span-8">
@@ -75,15 +75,15 @@ CareerCard.propTypes = {
 
 const Careers = () => {
   return (
-   <div className="max-w-screen-xl mx-auto">
-     <div className="py-14 md:py-24 bg-white text-gray-heading">
+   <div className="max-w-screen-xl mx-10">
+     <div className="py-14 md:py-24 text-gray-heading">
       <div className="px-4 mx-auto">
         <div className="grid grid-cols-12 justify-between gap-4 max-w-7xl mx-auto">
-          <div className="col-span-12 md:col-span-5 text-center md:text-start">
+          <div className="col-span-12 md:col-span-10 text-center md:text-start">
             <h1 className="text-[32px] md:text-[45px] leading-none font-bold mb-4 ">
               Join our team
             </h1>
-            <p className="font-medium leading-6 opacity-80 ">
+            <p className="font-medium ">
               Our philosophy is simple - hire a team of diverse, passionate
               people and faster a culture that empowers you to do the best work
             </p>
