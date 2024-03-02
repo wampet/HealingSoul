@@ -1,6 +1,7 @@
 {
   "name": "healingsoul",
   "private": true,
+  "homepage" : "http://www.healing-soul.org/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
