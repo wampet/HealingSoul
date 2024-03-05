@@ -59,7 +59,7 @@ function CounterSection({ label, start, end, delay }) {
       <span className="text-orange-600 font-bold md:font-extrabold text-5xl">
         <Counter start={start} end={end} delay={delay} preFix="+" />
       </span>
-      <span className="text-gray-heading text-xl font-medium mt-2">{label}</span>
+      <span className="text-gray-heading text-xl font-medium mt-2 text-center">{label}</span>
     </div>
   );
 }

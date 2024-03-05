@@ -83,7 +83,6 @@ const faqList = [
   },
 ];
 
-
 const FaqItem = ({ faq, isOpen, toggleFaq }) => {
   return (
     <div className={`faq-item ${isOpen ? "active" : ""}`}>
@@ -128,7 +127,7 @@ const Faqs = () => {
   };
 
   return (
-    <section>
+    <section className=" bg-[#F5F5F5]">
       <Banner
         title="Frequently Asked Questions"
         subtitle="You’ve got questions. We’ve got answers. If this page doesn’t
@@ -137,8 +136,8 @@ const Faqs = () => {
         backgroundImage="https://cdn2.hubspot.net/hubfs/747395/How%20to%20Find%20the%20Right%20Assisted%20Senior%20Living%20in%20Greenville%20SC.jpg"
       />
 
-      <div className="py-14 md:py-20 bg-[#F5F5F5]">
-        <div className="px-8 md:px-8 lg:px-20">
+      <div className="max-w-screen-xl mx-5 md:mx-auto py-14 md:py-20">
+        <div className="">
           <div className="col-span-10 col-start-2">
             <div className="bg-white shadow dark:shadow-none p-8">
               {faqList.map((faq, i) => (

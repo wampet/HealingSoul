@@ -17,7 +17,7 @@ function CTA() {
                 enjoy a meal and meet our wonderful staff.
               </p>
               <form>
-                <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-x-4 md:space-y-0">
+                <div className="flex flex-col md:flex-row items-center justify-center  md:space-x-4 md:space-y-0">
                   <Button
                   onClick={() => navigate("/about/company-overview")}
                     variant="outline"

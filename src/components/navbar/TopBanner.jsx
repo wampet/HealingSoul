@@ -23,7 +23,7 @@ function TopBanner() {
         </div>
         <div className="flex items-center mt-2 md:mt-0">
           <MapPin className="mr-1 h-5  w-5" />
-          15 Middlesex Street, Framingham Ma 01702
+          15 Middlesex st, Framingham, MA. 01702
         </div>
       </div>
     </div>

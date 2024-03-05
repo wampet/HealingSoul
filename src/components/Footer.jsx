@@ -52,7 +52,7 @@ const Footer = () => (
           <div className="text-white">
             15 Middlesex st,
             <br />
-            Framingham MA
+            Framingham, MA.
             <br />
             01702
           </div>
